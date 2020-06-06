@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1><%= @board.title%></h1>
+    <div class="title-image-center">
+      <%= attachment_image_tag @board, :image,class:'image-width' %>
+    </div>
+    
+    
+    <span><%= @board.user.name %>さんの投稿</span>
+    <% if current_user.already_favorited?(@board) %>
+      <%= link_to board_favorites_path(@board),method: :delete do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    <% else %>
+      <%= link_to board_favorites_path(@board),method: :post do %>
+        <i class="far fa-heart"></i>
+      <% end %>
+    <% end %>
+    <%= @board.favorites.count %>
+    <div class="make">
+      <h2>手順</h2>
+    </div>
+      <% @board_details.each do |board_detail| %>
+        <div class="text">
+          <%= attachment_image_tag board_detail,:image ,class:'image-width' %>
+          <p class="font-size"><%= board_detail.body%></p>
+        </div>
+      <% end %>
+  </div>
+</div>
+      <% if @board.user.id == current_user.id %>
+        <%= link_to "編集",edit_board_path(@board), class:"btn btn-success"%>
+      <% end %>
+      <% if @board.user.id == current_user.id %>
+        <%= link_to "削除", board_path(@board),method: :delete, data: {confirm: "削除しますか？"},class:'btn btn-danger delete'%>
+      <% end %>
+<%= link_to user_path(@board.user) do %>
+  <%= @board.user.name %>さんのページへ
+<% end %>

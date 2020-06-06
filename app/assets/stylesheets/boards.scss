@@ -1,0 +1,136 @@
+// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image_width{
+  width:350px;
+}
+
+
+h2{
+  text-align:center;
+  margin-top:5%;
+}
+
+.title-image-center{
+  text-align:center;
+}
+
+.image-width{
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.text{
+  margin-top:3%;
+  display:flex;
+  
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+
+.text:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 #fff #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.text p {
+    margin: 0; 
+    padding: 0;
+    font-size:14px;
+    padding-left: 20px;
+}
+
+.relative{
+  position:relative;
+  
+  i{
+    position:absolute;
+    top:50%;
+    left:47%;
+    font-size: 40px;
+    color:white;
+  }
+}
+  #board_image{
+    display:none;
+  }
+ 
+#cover-image{
+  cursor:pointer;
+}
+
+.relative-detail{
+  position:relative;
+  
+  i{
+    position:absolute;
+    top: 39%;
+    left: 19%;
+    font-size: 22px;
+    color:white;
+  }
+}
+
+.board_detail_image{
+  display:none;
+}
+
+.board-image{
+  cursor:pointer;
+}
+
+.parent{
+  display:flex;
+}
+
+.user-link-update{
+  width: 100%;
+  padding: 12px 10px;
+}
+
+.favorite{
+  text-align: right;
+}
+
+
+.boards__searchForm {
+  display: inline-block;
+}
+
+.boards__select {
+  display: inline-block;
+  width: auto;
+}
+
+.tag{
+  text-align: right;
+}
+
+.tag-mipage{
+    text-align: left;
+}
+
+.itiran-title{
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.span-title{
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+//  検索フォーム

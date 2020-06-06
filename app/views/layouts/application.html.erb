@@ -4,18 +4,20 @@
     <title>DeviseSample</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/func.js"></script>
+
+    <script src="https://kit.fontawesome.com/484e6509e8.js" crossorigin="anonymous"></script>  </head>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+
+	
+<link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
+</head>
 
   <body>
-    
       <%= render 'shared/header' %>
-      <div class="wrapper">
-        <%= yield %>
-      </div>
-      <%= render 'shared/footer' %>
-   
+      <%= yield %>
   </body>
 </html>

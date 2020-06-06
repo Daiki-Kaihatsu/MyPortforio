@@ -1,12 +1,49 @@
+
+// 背景画像
+body {
+  background-image:url(top-image.jpg);
+  background-repeat:  no-repeat; 
+  background-size:  cover; 
+}
+
+// タイトル
 .title{
-  font-size:50px;
-  padding-top:50px;
+font-family: 'Londrina Shadow', cursive;
+color:#ffcc00;
+font-size: 80px;
 }
 
-.container{
-  text-align:center;
+// サブタイトル
+.subtitle{
+color: ghostwhite;
 }
 
-.padding-top{
-  margin-top:50px;
+//ボタン
+.arrow_btn {
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #1B1B1B;
+	background: #fff;
+	border-radius: 30px;
+	border:1px solid #1B1B1B;
+	transition: transform ease .3s;
+	margin-top: 250px;
+}
+.arrow_btn:hover {
+	 cursor: pointer;
+	 text-decoration: none;
+}
+.arrow_btn span {
+	display: inline-block;
+	text-decoration: none;	
+	transition: transform ease .3s;
+}
+.arrow_btn:hover span{
+	cursor: pointer;
+	text-decoration: none;
+	transform: translateX(6px);
 }

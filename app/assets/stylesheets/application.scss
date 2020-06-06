@@ -1,11 +1,13 @@
+@charset 'UTF-8';
 @import "bootstrap";
 @import "homes";
+@import "users";
+@import "boards";
+
+@import "font-awesome";
 
 
 
-body{
-  background-color:#f5f5f5;
-}
 
 
 // ログイン画面

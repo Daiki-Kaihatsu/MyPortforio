@@ -1,0 +1,58 @@
+<div class="ml-auto boards__linkBox tag">
+    <%= form_with url: search_boards_path, method: :get, local: true do |f| %>
+        <%= f.text_field :title %>
+        <%= f.submit :検索 %>
+    <% end %>
+    
+    <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :tag_id,
+                     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                     {
+                       prompt: 'タグで絞り込み',
+                       class: 'form-control boards__select',
+                       onchange: 'submit(this.form);'
+                     }
+      %>
+    <% end %>
+</div>
+<div class="container">
+  <h1 class="text-center">投稿一覧画面</h1>
+    <div class="row">
+      <% @boards.each do |board| %>
+        <div class="card-itiran">
+          <%= link_to board_path(board) do %>
+            <%= attachment_image_tag board, :image ,class:"img-responsive card-img-itiran"%>
+          <% end %>
+          <div class="itiran-title">
+              <%= board.title %>
+          </div>
+          <div class="parent">
+            <%= link_to user_path(board.user.id) do %> 
+              <%= attachment_image_tag board.user, :profile_image,fallback: "noimage.png",class:"card-img-itiran-profile"%>
+            <% end %>
+            <div class="user-link-update">
+              <%= link_to board.user.name ,user_path(board.user.id)%><br>
+              <%= board.updated_at.strftime("%Y-%m-%d %H:%M") %>
+            </div>
+          </div>
+          
+          <div class="favorite tag">
+              <% board.tags.each do |tag| %>
+                <span class="badge badge-primary"><%= tag.name %></span>
+              <% end %>
+            <% if current_user.already_favorited?(board) %>
+              <%= link_to board_favorites_path(board),style:"text-decoration: none;",method: :delete do %>
+                <i class="fas fa-heart" ></i>
+              <% end %>
+            <% else %>
+              <%= link_to board_favorites_path(board),style:"text-decoration: none;",method: :post do %>
+                <i class="far fa-heart" style="text-decoration:none";></i>
+              <% end %>
+            <% end %>
+            <%= board.favorites.count %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>

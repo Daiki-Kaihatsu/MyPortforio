@@ -1,7 +1,18 @@
-<h1><%= t('.title', resource: resource_name.to_s.humanize) %></h1>
+<div class="container-login">
+  <h1>アカウント編集</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= bootstrap_devise_error_messages! %>
+  
+   <div class="form-group">
+     <%= f.label :profile_image,'プロフィール画像' %>
+     <%= f.attachment_field :profile_image, autofocus: true, autocomplete: 'profile_image', class: 'form-control'%>
+   </div>
+  
+   <div class="form-group">
+     <%= f.label :name,'名前' %>
+     <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control',:placeholder => "name" %>
+   </div>
 
   <div class="form-group">
     <%= f.label :email %>
@@ -26,6 +37,11 @@
 
     <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
   </div>
+  
+   <div class="form-group">
+      <%= f.label :profile,'一言' %>
+      <%= f.text_area :profile, autofocus: true, autocomplete: 'profile', class: 'form-control',:placeholder => "コメント入力",rows:3 %>
+   </div>
 
   <div class="form-group">
     <%= f.submit t('.update'), class: 'btn btn-primary' %>
@@ -34,4 +50,5 @@
 
 <p><%= t('.unhappy') %>? <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %>.</p>
 
-<%= link_to t('.back'), :back %>
+
+</div>

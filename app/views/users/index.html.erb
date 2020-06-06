@@ -1,0 +1,29 @@
+  <div class="h1-center">ユーザー一覧</div>
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+        <section class="card">
+          <%= link_to user_path(user) do %>
+            <% if user.profile_image.present? %>
+              <%= image_tag attachment_url(user,:profile_image) ,class:'img-responsive card-img'%>
+            <%else%>
+              <%= image_tag 'noimage.png' ,class:'img-responsive card-img' %>
+            <% end %>
+              <div class="card-content">
+                <h1 class="card-name"><%=link_to user.name, user_path(user),style:'text-decoration: none; color:#4682b4;' %></h1>
+                <div class="card-count">
+                   投稿数：<%= user.boards.count %>
+                </div>
+              </div>
+         <% end %>
+        </section>
+    <% end %>
+  </div>
+</div>
+<div class="pager">
+  <%= paginate @users %>
+</div>
+
+
+
+

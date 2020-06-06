@@ -1,0 +1,36 @@
+<%=form_with(model: board, local: true) do |f|%>
+  <div id="cover-image" class="relative">
+    <% if board.image_id.present? %>
+      <%= image_tag attachment_url(board, :image),class:'board-image',style:'width:100%;height:300px;'%>
+    <% else %>
+      <%= image_tag 'none_image.jpg',class:'board-image',style:'width:100%;height:300px;'%>
+    <% end %>
+    <i class="fa fa-camera"></i>
+  </div>
+    <%= f.attachment_field :image %><br>
+  <%= f.text_field :title,:placeholder => "タイトル" %><br>
+  <%= f.hidden_field :id %>
+
+  <div class="board_details">
+    <%= f.fields_for :board_detail do |df| %>
+      <%= render partial: "board_detail_form",locals: {f: df } %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_field( "タグを追加", f, :board_detail ,{})%>
+    </div>
+    
+  <div class="form-group">
+    <span>タグ</span>
+    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+      <div class="form-check">
+        <%= tag.label class: 'form-check-label' do %>
+          <%= tag.check_box class: 'form-check-input' %>
+          <%= tag.text %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+    
+    <%= f.submit %>
+  </div>
+<% end %>

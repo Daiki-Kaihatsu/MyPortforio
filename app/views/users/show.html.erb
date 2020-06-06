@@ -1,0 +1,70 @@
+<div class="ml-auto boards__linkBox tag">
+    <%= form_with url: user_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :tag_id,
+                     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                     {
+                       prompt: 'タグで絞り込み',
+                       class: 'form-control boards__select',
+                       onchange: 'submit(this.form);'
+                     }
+      %>
+    <% end %>
+</div>
+
+<div class="display box27">
+    <%= attachment_image_tag @user,:profile_image, fallback:"noimage.png",class:'img-responsive image-detail-size'%>
+  <div class="flex">
+    <span class="box-title"><%= @user.name%></span>
+    <%=simple_format @user.profile ,class:'color'%>
+    <div class="display padding-top-81px">
+      <div class="edit">
+        <% if @user.id == current_user.id %>
+          <%= link_to '編集',edit_user_path(@user),class:"",style:"text-decoration:none; "%>
+        <% end %>
+      </div
+      <div class="email">
+        <% if @user.id == current_user.id %>
+          <h6 class="color"><%= @user.email %></h6>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+    <div class="row">
+      <% @boards.each do |board| %>
+        <!--<section class="card-detail">-->
+          <div class="card-detail">
+            <%= link_to board_path(board) do %>
+              <%= attachment_image_tag board, :image ,class:"img-responsive card-img"%>
+            <% end %>
+            <div class="parent">
+              <span class="span-title"><%= board.title%></span>
+            </div>
+            <div class="tag-mipage">
+              <% board.tags.each do |tag| %>
+                <span class="badge badge-primary"><%= tag.name %></span>
+              <% end %>
+            </div>
+            <div class="postuser-link-update">
+              <%= board.updated_at.strftime("%Y-%m-%d %H:%M") %>
+              <% if current_user.already_favorited?(board) %>
+                <%= link_to board_favorites_path(board),method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= link_to board_favorites_path(board),method: :post do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+              <%= board.favorites.count %>
+            </div>
+          </div>
+        <!--</section>-->
+      <% end %>
+    </div>
+<div class="pager">
+  <%= paginate @boards %>
+</div>
+</div>
