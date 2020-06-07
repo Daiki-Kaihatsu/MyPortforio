@@ -279,3 +279,23 @@ form {
 .tag{
   padding-left: 5px;
 }
+
+// プロフィールの登録画面
+
+.img-profile{
+  text-align:center;
+}
+
+.profile-user{
+  width: 168px;
+  object-fit: contain;
+  height: 150px;
+}
+
+#user_profile_image{
+  display:none;
+}
+
+#cover-user{
+  cursor:pointer;
+}

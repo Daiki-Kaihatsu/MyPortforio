@@ -2,12 +2,10 @@
   <h1>ログイン</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
     <div class="form-item">
-      <%= f.label :name %>
       <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: ' feedback-input',:placeholder => "name"%>
     </div>
     
     <div class="form-item">
-      <%= f.label :password %>
       <%= f.password_field :password, autocomplete: 'current-password', class: ' feedback-input',required: true,minlength: @minimum_password_length,maxlength: '30',:placeholder => "password" %> 
     </div>
     
