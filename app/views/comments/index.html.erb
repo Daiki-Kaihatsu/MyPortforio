@@ -1,0 +1,12 @@
+<h2>コメント一覧</h2>
+  <% @comments.each do |comment| %>
+  <div>
+    投稿者<%= comment.name %><br>
+    <hr>
+    <%= link_to board_comment_path(id: comment) do %>
+      タイトル<%= comment.title %><br>
+    <% end %>
+    <hr>
+    質問内容<%= comment.question %>
+  </div><br>
+<% end %>

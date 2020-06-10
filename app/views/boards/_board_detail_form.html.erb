@@ -1,18 +1,11 @@
-<div class="nested-fields"><br>
-  <p><%=f.label :body,'説明' ,style:'margin-bottom:0px;'%></p>
-  <div class="form-group">
-    <%= f.text_area:body,class:'form-control',rows:6,:placeholder => "説明文を入力"  %><br>
-
-   
+<div class="nested-fields text ">
+  <div class="parent">
+    <!--<p><%#=f.label :body,'説明' ,style:'margin-bottom:0px;'%></p>-->
+    <div class="form-group text-body ">
+      <%= f.text_area:body,class:'form-control',rows:5,cols:1,:placeholder => "説明文を入力"  %><br>
+    </div>
+      <%= f.attachment_field :image ,class:'board_detail_image'%>
   </div>
-  <div id="cover-image-detail" class="relative-detail">
-    <%= image_tag 'none_image.jpg',class:' board-image-detail',style:'width:200px;height:150px;'%>
-    <i class="fa fa-camera"></i>
-  </div>
-  
-  
-    <%= f.attachment_field :image ,class:'board_detail_image'%>
     <%= f.hidden_field :id%>
-    
-  <%= link_to_remove_field( "remove task", f,{}) %>
+    <%= link_to_remove_field( "remove task", f,{}) %>
 </div>

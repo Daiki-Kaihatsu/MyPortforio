@@ -1,4 +1,5 @@
-  <div class="h1-center">ユーザー一覧</div>
+
+<h1 class="text-center user-itiran-margin">ユーザー一覧</h1>
 <div class="container">
   <div class="row">
     <% @users.each do |user| %>
@@ -20,7 +21,7 @@
     <% end %>
   </div>
 </div>
-<div class="pager">
+<div>
   <%= paginate @users %>
 </div>
 

@@ -1,0 +1,106 @@
+// ログイン画面のCSS
+input:focus, textarea:focus {
+  outline: none;
+}
+
+* {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+.session-form {
+  background: #fff;
+  border-radius: 6px;
+  padding: 50px;
+  padding-top: 20px;
+  margin: 50px auto;
+}
+
+.roguin {
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #ccc;
+  margin-bottom: 24px;
+  font-size:30px;
+}
+
+input {
+  width: 100%;
+  background: #f5f5f5;
+  border: 0;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+}
+
+.button {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  border: 0;
+  background: #f26964;
+  font-size: 1.2em;
+  color: #fff;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 0px #c1524e;
+
+  &:active {
+    top: 3px;
+    box-shadow: none;
+  }
+}
+
+.guest-margin{
+  margin-top: 20px;
+  margin-bottom: 31px;
+  
+}
+
+// 新規登録画面のCSS
+
+// プロフィール画像
+#cover-user{
+  cursor:pointer;
+}
+
+.img-profile{
+  text-align:center;
+}
+
+.profile-user{
+  width: 168px;
+  object-fit: contain;
+  height: 150px;
+}
+
+.text-profile{
+  margin-bottom: 10px;
+}
+
+
+.registration_margin {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  padding-top: 30px;
+  margin: 50px auto;
+}
+
+.registration {
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #ccc;
+  margin-bottom: 24px;
+}

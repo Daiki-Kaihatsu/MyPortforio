@@ -23,9 +23,8 @@ h2{
 }
 
 .text{
+  margin-bottom: 3%;
   margin-top:3%;
-  display:flex;
-  
   position: relative;
   background: #fff0cd;
   box-shadow: 0px 0px 0px 5px #fff0cd;
@@ -84,7 +83,9 @@ h2{
 }
 
 .board_detail_image{
-  display:none;
+  // display:none;
+   width: 250px;
+   margin-left: 5px;
 }
 
 .board-image{
@@ -105,22 +106,8 @@ h2{
 }
 
 
-.boards__searchForm {
-  display: inline-block;
-}
 
-.boards__select {
-  display: inline-block;
-  width: auto;
-}
 
-.tag{
-  text-align: right;
-}
-
-.tag-mipage{
-    text-align: left;
-}
 
 .itiran-title{
   padding: 5px;
@@ -133,4 +120,41 @@ h2{
   font-weight: bold;
 }
 
-//  検索フォーム
+.image-padding{
+  padding-left:34px;
+}
+
+.text-body{
+  margin-bottom:0;
+  width: 415px;
+}
+
+.text-show{
+  margin-bottom: 3%;
+  margin-top:3%;
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  display: flex;
+}
+
+.text-show:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 #fff #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.text-show p {
+    margin: 0; 
+    padding: 0;
+    font-size:14px;
+    padding-left: 20px;
+}

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       
       @user = User.find(params[:id])
       @boards= params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : @user.boards.all
-      @boards = @boards.page(params[:page]).per(6)
+      @boards = @user.boards.page(params[:page]).per(6)
       
     else
       render template: "homes/index",alert:'ログインしてください'

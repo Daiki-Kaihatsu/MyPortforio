@@ -1,41 +1,57 @@
-<div class="form-wrapper">
-  <h1 style='text-align:center;'>ユーザー詳細画面</h1>
-  
-  <%= form_for @user do |f| %>
-  
-  <div id="cover-user" class="img-profile">
-    <% if @user.profile_image_id.present? %>
-      <%= image_tag attachment_url(@user, :profile_image),class:'profile-user' %>
-    <% else %>
-      <%= image_tag 'noimage.png',class:'profile-user'%>
-    <% end %>
+<!--<div class="form-wrapper">-->
+<!--  <h1 style='text-align:center;'>ユーザー詳細画面</h1>-->
+<!--  <%#= form_for @user do |f| %>-->
+<!--    <div id="cover-user" class="img-profile">-->
+<!--      <%# if @user.profile_image_id.present? %>-->
+<!--        <%#= image_tag attachment_url(@user, :profile_image),class:'profile-user' %>-->
+<!--      <%# else %>-->
+<!--        <%#= image_tag 'noimage.png',class:'profile-user'%>-->
+<!--      <%# end %>-->
+<!--    </div>-->
+    
+<!--    <%#= f.attachment_field :profile_image, autofocus: true, autocomplete: 'profile-image'%>-->
+
+<!--    <div class="form-group">-->
+<!--      <%#= f.label :name,'名前' %>-->
+<!--      <%#= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control',:placeholder => "name" %>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <%#= f.label :email %>-->
+<!--      <%#= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control',:placeholder => "email" %>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <%#= f.label :profile,'一言' %>-->
+<!--      <%#= f.text_area :profile, autofocus: true, autocomplete: 'profile', class: 'form-control',:placeholder => "コメント入力",rows:3 %>-->
+<!--    </div>-->
+<!--    <%#= f.submit  class: 'btn btn-primary btn-block' %>-->
+<!--   <%# end %>-->
+<!--</div>-->
+
+<div class="container jumbotron">
+  <div class="row">
+    <div class="col-md-6 registration_margin">
+      <div class="registration_form">
+        <%= form_for @user do |f| %>
+          <h1 class="registration">ユーザー詳細画面</h1>
+          <div id="cover-user" class="img-profile">
+            <% if @user.profile_image_id.present? %>
+              <%= image_tag attachment_url(@user, :profile_image),class:'profile-user' %>
+            <% else %>
+              <%= image_tag 'noimage.png',class:'profile-user'%>
+            <% end %>
+          </div>
+          <%= f.attachment_field :profile_image, autofocus: true, autocomplete: 'profile-image'%>
+          <%= f.label :name,'名前' %>
+          <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control',:placeholder => "name" %>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control',:placeholder => "email" %>
+          <%= f.label :profile,'一言' %>
+          <div class="text-profile">
+            <%= f.text_area :profile, autofocus: true, autocomplete: 'profile', class: 'form-control',:placeholder => "コメント入力",rows:3 %>
+          </div>
+          <%= f.submit  class: 'button' %>
+          <% end %>
+      </div>
+    </div>
   </div>
-    <%= f.attachment_field :profile_image, autofocus: true, autocomplete: 'profile-image'%>
-
-    <div class="form-group">
-      <%= f.label :name,'名前' %>
-      <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control',:placeholder => "name" %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control',:placeholder => "email" %>
-    </div>
-  
-    
-
-    
-    
-    <div class="form-group">
-      <%= f.label :profile,'一言' %>
-      <%= f.text_area :profile, autofocus: true, autocomplete: 'profile', class: 'form-control',:placeholder => "コメント入力",rows:3 %>
-    </div>
-    
-  
-    
-      <%= f.submit  class: 'btn btn-primary btn-block' %>
-    
-    
-
- <% end %>
-
+</div>

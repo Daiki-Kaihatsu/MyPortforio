@@ -12,23 +12,23 @@
 </div>
 
 <div class="display box27">
-    <%= attachment_image_tag @user,:profile_image, fallback:"noimage.png",class:'img-responsive image-detail-size'%>
-  <div class="flex">
+  <%= attachment_image_tag @user,:profile_image, fallback:"noimage.png",class:'img-responsive image-detail-size'%>
+  <div>
     <span class="box-title"><%= @user.name%></span>
-    <%=simple_format @user.profile ,class:'color'%>
-    <div class="display padding-top-81px">
+    <%=simple_format @user.profile%>
+    <div class="display profile-bottom">
       <div class="edit">
         <% if @user.id == current_user.id %>
-          <%= link_to '編集',edit_user_path(@user),class:"",style:"text-decoration:none; "%>
+          <%= link_to '編集',edit_user_path(@user),style:"text-decoration:none; "%>
         <% end %>
       </div
-      <div class="email">
-        <% if @user.id == current_user.id %>
-          <h6 class="color"><%= @user.email %></h6>
-        <% end %>
-      </div>
+    <div>
+      <% if @user.id == current_user.id %>
+        <h6><%= @user.email %></h6>
+      <% end %>
     </div>
   </div>
+</div>
 
 
 <div class="container">

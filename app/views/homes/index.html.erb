@@ -1,13 +1,19 @@
 <%= render 'shared/flash_messages' %>
-
   <div class="center">
     <div class="text-center">
-    <h1 class="title">SONAERU</h1>
-    <p class="subtitle">〜皆さんが意識している防災対策をブログで共有してみませんか？〜</p>
-    
-    <%= link_to  new_user_session_path, class: 'arrow_btn' do %>
-    ログイン画面へ
-    <span><i class="fas fa-arrow-alt-circle-right"></i></span>
-    <% end %>
+      <h1 class="title">SONAERU</h1>
+      <p>〜皆さんが意識している防災対策をブログで共有してみませんか？〜</p>
+      
+      <div class="button-top">
+        <%= link_to  new_user_session_path, class: 'arrow_btn' do %>
+        ログイン
+        <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+        <% end %><br>
+        
+        <%= link_to  new_user_registration_path, class: 'arrow_btn button-margin-top' do %>
+        アカウント登録
+        <span><i class="fas fa-arrow-alt-circle-right"></i></span>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>

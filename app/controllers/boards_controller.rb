@@ -10,12 +10,13 @@ class BoardsController < ApplicationController
   def search
      params[:title].present?
      @boards = Board.where('title LIKE ?', "%#{params[:title]}%")
-     
   end
 
   def show
     @board_id = Board.find(params[:id]).id
     @board_details = BoardDetail.where(board_id:@board_id)
+    @comments = @board.comments
+    @comment = Comment.new
   end
 
   def new

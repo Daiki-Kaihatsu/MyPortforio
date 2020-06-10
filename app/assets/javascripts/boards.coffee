@@ -68,6 +68,11 @@ $(document).on 'turbolinks:load', ->
     return
   return
   
+  
+
+  
+  
+  
 $(document).on 'turbolinks:load', ->
   # 追加ボタンを押されたとき
   $('form').on 'click', '.add_field', (event) ->

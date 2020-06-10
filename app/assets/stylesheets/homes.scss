@@ -1,21 +1,31 @@
 
 // 背景画像
 body {
-  background-image:url(top-image.jpg);
-  background-repeat:  no-repeat; 
-  background-size:  cover; 
+  background-color:whitesmoke;
+  // background-repeat:  no-repeat; 
+  // background-size:  cover; 
+  // background-position: 0 30%;
 }
 
-// タイトル
-.title{
-font-family: 'Londrina Shadow', cursive;
-color:#ffcc00;
-font-size: 80px;
-}
+.title {
+  font-family:cursive;
+  color: dimgrey;
+  font-size: 100px;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 100px;
 
-// サブタイトル
-.subtitle{
-color: ghostwhite;
+}
+.title:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 58px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 //ボタン
@@ -31,7 +41,6 @@ color: ghostwhite;
 	border-radius: 30px;
 	border:1px solid #1B1B1B;
 	transition: transform ease .3s;
-	margin-top: 250px;
 }
 .arrow_btn:hover {
 	 cursor: pointer;
@@ -46,4 +55,12 @@ color: ghostwhite;
 	cursor: pointer;
 	text-decoration: none;
 	transform: translateX(6px);
+}
+
+.button-top{
+  margin-top:150px;
+}
+
+.button-margin-top{
+  margin-top:30px;
 }

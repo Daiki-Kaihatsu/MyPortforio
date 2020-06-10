@@ -1,16 +1,15 @@
-<div class="form-wrapper">
-  <h1>ログイン</h1>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
-    <div class="form-item">
-      <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: ' feedback-input',:placeholder => "name"%>
+<div class="container jumbotron">
+  <div class="row">
+    <div class="col-md-6 registration_margin">
+      <div class="registration">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
+          <h1 class="roguin">ログイン</h1>
+          <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: ' feedback-input',:placeholder => "name"%>
+          <%= f.password_field :password, autocomplete: 'current-password', class: ' feedback-input',required: true,minlength: @minimum_password_length,maxlength: '30',:placeholder => "password" %> 
+          <%= f.submit  'サインイン',class:"button"%>
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, class: 'btn btn-warning form-control guest-margin',method: :post %>
+        <% end %>
+      </div>
     </div>
-    
-    <div class="form-item">
-      <%= f.password_field :password, autocomplete: 'current-password', class: ' feedback-input',required: true,minlength: @minimum_password_length,maxlength: '30',:placeholder => "password" %> 
-    </div>
-    
-    <div class="button-panel">
-      <%= f.submit  'サインイン',class:"button"%>
-    </div>
-      <%= link_to "ゲストログイン", users_guest_sign_in_path, class: 'btn btn-warning form-control guest-margin',method: :post %>
-<% end %>
+  </div>
+</div>

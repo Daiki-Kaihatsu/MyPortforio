@@ -1,8 +1,11 @@
+
 <div class="ml-auto boards__linkBox tag select-light">
   <div class="search">
     <%= form_with url: search_boards_path, id: :form1 ,method: :get, local: true do |f| %>
-        <%= f.text_field :title, id:'sbox'%>
-        <%= f.submit :検索 ,id:'sbtn' %>
+        <div class="form-group">
+          <%= f.text_field :title ,class:'form-control', id:'sbox'%>
+          <%= f.submit :検索 ,id:'sbtn' %>
+        </div>
     <% end %>
   </div>
     
@@ -17,6 +20,9 @@
       %>
     <% end %>
 </div>
+
+
+
 <div class="container">
   <h1 class="text-center">投稿一覧画面</h1>
     <div class="row">
