@@ -40,6 +40,7 @@ class BoardsController < ApplicationController
   def update
     @board.update(board_params)
     redirect_to @board
+    binding.pry
   end
   
   def destroy

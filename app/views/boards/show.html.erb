@@ -41,10 +41,9 @@
   <%= @board.user.name %>さんのページへ
 <% end %>
 
-
-
+<h1>質問入力</h1>
 <div>
-  <%= form_for [@board, @comment] do |f| %>
+   <%= form_for [@board, @comment] do |f| %>
 <%= f.hidden_field :board_id, value: @board.id %>
   <div class="form-group">
     <%= f.text_field :name, autofocus: true,class:'form-control', autocomplete: 'name',:placeholder => "name" %>

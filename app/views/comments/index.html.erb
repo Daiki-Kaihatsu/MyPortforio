@@ -9,4 +9,10 @@
     <hr>
     質問内容<%= comment.question %>
   </div><br>
+
+  <div>
+    <%=link_to '編集',edit_board_comment_path(id: comment) %>
+    <%=link_to '削除',board_comment_path(id: comment),method: :delete, data:{confirm: '削除しますか'} %>
+  </div>
 <% end %>
+<%= link_to '投稿詳細', board_path(@board)%>
