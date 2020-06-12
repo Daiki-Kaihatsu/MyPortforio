@@ -1,0 +1,33 @@
+<div>
+  <h3>回答一覧</h3>
+  <table class="table table-striped">
+    <% if @answers.any?%>
+      <thead class="thead-light">
+        <tr>
+          <td>Answer</td>
+          <td>name</td>
+          <td>Menu</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @answers.each do |answer| %>
+          <tr>
+            <td>
+              <%= answer.content %>
+            </td>
+            <td>
+              <%= answer.name %>
+            </td>
+            <td>
+              [<%= link_to '編集', edit_board_comment_answer_path(id: answer) %>]
+              [<%= link_to '削除', board_comment_answer_path(id: answer),
+              method: :delete, data:{confirm:'削除してもよろしいですか？'}%>]
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% else %>
+      <p>回答はありません</p>
+    <% end %>
+  </table>
+</div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'answers/edit'
   root 'homes#index'
   devise_for :users
   devise_scope :user do
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
   resources :boards do
     resource :favorites, only: [:create,:destroy]
     get :search, on: :collection
-    resources :comments
+    resources :comments do 
+      resources :answers 
+    end
   end
 
 end

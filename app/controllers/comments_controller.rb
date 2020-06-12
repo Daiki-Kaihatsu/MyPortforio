@@ -7,8 +7,9 @@ class CommentsController < ApplicationController
   end
   
   def show
+    @board = Board.find(params[:board_id])
     @comment = Comment.find(params[:id])
-    
+    @answer = Answer.new
   end
   
   def new
